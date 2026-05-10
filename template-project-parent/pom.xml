@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.1.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd">
+
+    <modelVersion>4.1.0</modelVersion>
+
+    <parent/>
+
+    <artifactId>template-project-parent</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Template Project Parent</name>
+    <description>
+        Template Project Parent.
+    </description>
+
+    <properties>
+        <!-- Project-specific properties -->
+    </properties>
+
+    <subprojects>
+        <subproject>../template-project-module1</subproject>
+        <subproject>../template-project-module2</subproject>
+    </subprojects>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>6.0.3</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-bom</artifactId>
+                <version>3.27.7</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
