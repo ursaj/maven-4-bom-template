@@ -32,7 +32,7 @@ Why to use a BOM should be obvious. The approach described on the [Introduction 
 
 The setup I use is meant to provide a solution that works with plugins used for version manipulation and allows the use of a parent on the top-level pom.
 
-#### CI-friendly releases
+### CI-friendly releases
 
 There are two ways to release new version of your project. Simple one without changes in `pom.xml`:
 
@@ -42,12 +42,3 @@ or more complex one with the help of the [versions-maven-plugin](https://github.
 
     ./mvnw versions:set-property -DnewVersion=1.0.1-SNAPSHOT -Dproperty=revision -DgenerateBackupPoms=false -N
     ./mvnw deploy
-
-### Release plugin
-
-When using the [maven-release-plugin](https://maven.apache.org/maven-release/maven-release-plugin/index.html) we also want 
-the `bom` versions to be rolled correctly, which works automatically because BOM module is just a part of our multi-module project.
-
-    mvn release:prepare -DdryRun=true -B
-
-Run a `release:prepare` in dry run and check the generated pom files for the next and tag version.
