@@ -28,16 +28,20 @@
         <revision>1.0.0-SNAPSHOT</revision>
 
         <!-- Project defaults -->
+        <jdk.version>11</jdk.version>
+        <maven.compiler.release>${jdk.version}</maven.compiler.release>
+        <!--
         <jdk.version>8</jdk.version>
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
+        -->
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!--
-          - Use the following command to keep plugin versions up-to-date:
+          - Use the following command to keep plugins and dependencies versions up-to-date:
           - ./mvnw versions:update-properties -N
           -->
         <maven-clean-plugin.version>3.5.0</maven-clean-plugin.version>
